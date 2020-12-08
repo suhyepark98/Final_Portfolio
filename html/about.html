@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NAME | About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link rel="icon" type="image/png" href="https://example.com/favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body id="page">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">NAME</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html">WORK</a></li>
+                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="#">RESUME</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <a class="back-arrow" href="../index.html"><i class='fas fa-angle-left'></i> Back</a>
+
+    <div class="container-fluid text-center ">
+        <h3 class="margin">Hello, my name is NAME &#128075;</h3>
+        <img src="../img/about_photo.png" class="img-responsive img-circle margin" style="display:inline" alt="Profile"
+            width="350">
+        <h4 style="padding-left: 10vw; padding-right:10vw">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. </h4>
+    </div>
+
+    <footer class="container-fluid text-center slideanim">
+        <div class="back-to-top slideanim">
+            <a href="#page" title="Back to top ">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <p style="font-size: 18px">Back to top</p>
+        </div>
+        <br><br>
+        <div class="copyright">
+            <p style="font-size: 12px;"> &#169; 2020 NAME</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".navbar a, footer a[href='#page'], .scroll-down a[href='#projects']").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+
+</html>

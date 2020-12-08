@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NAME | Work</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="icon" type="image/png" href="https://example.com/favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body id="page">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-target="#navbarClass" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">NAME</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarClass">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./index.html">WORK</a></li>
+                    <li><a href="./html/about.html">ABOUT</a></li>
+                    <li><a href="#">RESUME</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid intro text-center">
+        <h3 class="margin">Hello, my name is NAME &#128075;</h3>
+        <h3 class="margin">I’m a user interface & user experience designer
+            passionate about design and data! </h3>
+        <img src="./img/favicon.png" class="img-responsive img-circle" alt="Graph" width="120" style="display:inline">
+    </div>
+    <div class="scroll-down container-fluid text-center slideanim">
+        <a href="#projects" title="Continue">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+    </div>
+
+    <div class="container-fluid work text-center" id="projects">
+        <h3 class="margin slideanim">Work</h3><br>
+        <div class="row slideanim">
+            <div class="col-sm-6 img-hover-zoom--brightness">
+                <p>Iterative Design</p>
+                <a href="./html/iterative-design.html">
+                    <!-- <a href="https://fast-garden-64286.herokuapp.com/"> -->
+                    <img src="./img/iterative.png" class="img-rounded margin" alt="Iterative Design" style="width:100%">
+                </a>
+            </div>
+            <div class="col-sm-6 img-hover-zoom--brightness">
+                <p>Development</p>
+                <a href="./html/development.html">
+                    <!-- <a href="https://mysterious-reaches-32008.herokuapp.com/"> -->
+                    <img src="./img/development.png" class="img-rounded margin" alt="Development" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="row slideanim">
+            <div class="col-sm-6 img-hover-zoom--brightness">
+                <p>A/B Testing</p>
+                <a href="./html/ab-testing.html">
+                    <!-- <a href="https://aqueous-escarpment-39546.herokuapp.com/"> -->
+                    <img src="./img/abtesting.png" class="img-rounded margin" alt="A/B Testing" style="width:100%">
+                </a>
+            </div>
+            <div class="col-sm-6 img-hover-zoom--brightness">
+                <p>Responsive Redesign</p>
+                <a href="./html/responsive.html">
+                    <!-- <a href="https://desolate-waters-65880.herokuapp.com/"> -->
+                    <img src="./img/responsive.png" class="img-rounded margin" alt="Responsive Redesign"
+                        style="width:100%">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <img class="slideanim" src="./img/bar_graph.png" width="150"></img><img class="slideanim"
+            src="./img/bar_graph.png" width="150"></img><img class="slideanim" src="./img/bar_graph.png"
+            width="150"></img>
+        <div class="connect-tools slideanim">
+            <br><br><br>
+            <p style="font-size: 18px">Let's connect!</p>
+            <a href="">
+                <i class="fa fa-envelope"></i>
+            </a>
+            <a href="">
+                <i class="fa fa-linkedin-square"></i>
+            </a>
+            <a href="">
+                <i class="fa fa-facebook-square"></i>
+            </a>
+            <a href="">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+        <br><br>
+        <div class="back-to-top slideanim">
+            <a href="#page" title="Back to top ">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <p style="font-size: 18px">Back to top</p>
+        </div>
+        <br><br>
+        <div class="copyright">
+            <p style="font-size: 12px"> &#169; 2020 NAME</p>
+        </div>
+
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".navbar a, footer a[href='#page'], .scroll-down a[href='#projects']").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+
+</html>
